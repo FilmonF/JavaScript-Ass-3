@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+        <!-- body of task -1 -->
+
+    <div>
+
+        <h3>1. JavaScript program to compute the sum of the two given integers, If the two values are the same, then return triple their sum.  </h3>
+        <input type="text" id="input1" />
+        <input type="text" id="input2" />
+        <button onclick="addition()">Get result</button>
+        <p id="result"></p>
+    
+
+    </div>
+      
+    <!-- body of task -2 -->
+    <div>
+        <h3>2. A JavaScript program where the program takes a random integer between 1 and 10, and the user is then prompted to input a guess number. The program displays a message "Good Work" </h3>
+        <input type="text" id="inputNumber">
+        <button onclick="messageD()">type a number</button>
+        <p id="result2"></p>
+   
+    </div>
+
+    <!-- TAsk-3 -->
+    <div class="rangechecker">
+      <h3>3. Range Checker</h3>
+       <label for="interger1">Enter first number:</label>
+      <input type="number" id="integer1"><br><br>
+      <label for="interger2">Enter first number:</label> 
+      <input type="number" id="integer2"> <br>
+      <button onclick="rangeChecker()">Check Range</button>
+
+      <h4 id="result3"></h4>
+
+    </div>
+    
+  <!-- Task 4 -->
+      
+    <div>
+      <h4>4. Closest value to 100 from two numerical values.</h4>
+      <label for="num1">Enter first number:</label>
+      <input type="num1" id="num1"><br><br>
+      <label for="num2">Enter first number:</label> 
+      <input type="number" id="num2"> <br>
+      <button onclick="closerChecker()">Check Range</button>
+
+      <h4 id="result4"></h4>
+    </div>
+  
+    <!-- Task-4 -->
+    <input type="text" id="elements">
+    <button id="add" onclick="add_elemet_to_array()">Add</button>
+    <button id="display" onclick="dispalay_array()">Display</button>
+    <div id="result5"></div>
+
+
+     <!-- // //  -->
+   
+
+
+   
+    <script>
+       
+    //    Task - 1  //
+
+      function addition() {
+      var x = document.getElementById("input1").value;
+      var y = document.getElementById("input2").value;
+
+        if (x == y) {
+        
+            let z = 3*(Number(x) +Number(y));
+
+            document.getElementById("result").innerHTML = z;
+          
+        }
+        else{
+            let z = Number(x) + Number(y);
+
+        document.getElementById("result").innerHTML = z;
+        }
+      }
+    //   //   // 
+
+
+    // TAsk-2 //
+    
+    function messageD(){
+      let x=Math.floor(Math.random() * 10);
+
+        var y=document.getElementById("inputNumber").value;
+
+        if (y==x){
+           let z="Good Work"
+           document.getElementById("result2").innerHTML=z
+
+        }
+        else {
+            document.getElementById("result2").innerHTML="not match"
+
+        }
+    }
+
+      //    //
+
+
+      // TAsk -3 //
+
+      
+
+     function rangeChecker(){
+
+      let x= document.getElementById("integer1").value;
+      let y= document.getElementById("integer2").value;
+
+
+      let inRange = (x>=50 && x<=99) || (y>=50 && x<=99)
+
+      document.getElementById("result3").innerHTML= inRange ? "True" : "False";
+     }
+
+
+    // TAsk-4  
+
+    function closerChecker() {
+     let x = document.getElementById('num1').value;
+     let y = document.getElementById('num2').value;
+
+     z= Math.abs(x-100);
+     w= Math.abs(y-100);
+    
+
+    if (z<w){
+      let closer=document.getElementById("result4").innerHTML= x + " is closer to 100"
+    }
+    else {
+      document.getElementById("result4").innerHTML= y + " is closer to 100"
+
+
+    }
+
+    }
+
+// Task 5  //
+
+let blankArray=[]
+
+function add_elemet_to_array(){
+
+    let input = document.getElementById("elements").value;
+    blankArray.push(input);
+    document.getElementById("elements").value = ""
+
+}
+
+function dispalay_array() {
+
+    for (let i = 0; i < blankArray.length; i++) {
+        
+        document.getElementById('result5').innerHTML += "Element" + (i+1) + '='+ blankArray[i] + "<br>";    
+    }
+}
+
+     
+
+
+    </script>
+
+   
+
+    
+
+
+</html>
